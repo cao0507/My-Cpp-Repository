@@ -1,7 +1,19 @@
 # ignore all the files.
-*.o
-*.exe
-*.cbp
-*.depend
-*.layout
-*.swp
+#*.o
+#*.exe
+#*.cbp
+#*.depend
+#*.layout
+#*.swp
+*
+
+!*/
+!*/*.cpp
+!*/*/*.cpp
+!*/*/*/*.cpp
+!*/*/*/*/*.cpp
+
+!*/*.md
+
+!.gitignore
+!*.md

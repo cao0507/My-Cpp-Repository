@@ -1,3 +1,0 @@
-F:/Git repository/C++/LeetCode/38. Count and Say/cmake-build-debug/CMakeFiles/38__Count_and_Say.dir
-F:/Git repository/C++/LeetCode/38. Count and Say/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/Git repository/C++/LeetCode/38. Count and Say/cmake-build-debug/CMakeFiles/rebuild_cache.dir
