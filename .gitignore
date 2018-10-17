@@ -1,0 +1,7 @@
+# ignore all the files.
+*.o
+*.exe
+*.cbp
+*.depend
+*.layout
+*.swp

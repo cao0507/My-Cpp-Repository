@@ -5,45 +5,46 @@ using namespace std;
 class Solution {
 public:
     int compress(vector<char>& chars) {
-        unsigned counter = 0;
-        auto start = chars.begin(), next = chars.begin();
-        while(next != chars.end()){
-            if (*start == *next)
+        int len = 0, counter = 1;
+        chars[len++] = chars[0];
+        auto p1 = chars.begin();
+        for (auto p2 = p1 + 1; p2 != chars.end(); p2++){
+            if (*p1 == *p2)
                 counter++;
             else{
-                if (counter >= 2){
-                    int i = 1;
-                    for (auto c:to_string(counter)){
-                        *(start + i) = c;
-                        i++;
-                    }
-                    while(i < counter){
-                        chars.erase(start + i);
-                        i++;
-                    }
-                }
-                start = next;
+
+                if (counter > 1)
+                    for (auto c:to_string(counter))
+                        chars[len++] = c;
+                p1 = p2;
+                chars[len++] = *p1;
                 counter = 1;
             }
-            next++;
         }
-        if (counter >= 2){
-            int i = 1;
-            for (auto c:to_string(counter)){
-                *(start + i) = c;
-                i++;
-            }
-            while(i < counter){
-                chars.erase(start + i);
-                i++;
-            }
-        }
-        return chars.size();
+        if (counter > 1)
+            for (auto c:to_string(counter))
+                chars[len++] = c;
+        chars.resize(len);
+        return len;
     }
 };
 
+vector<char> stringToCharVector(string input){
+    vector<char> output;
+
+}
+
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    string line;
+    while (getline(cin, line)){
+        vector<char> chars = stringToCharVector(line);
+        int ret = Solution().compress(chars);
+
+        cout << "vector<char> chars = " << endl;
+        for (auto c:chars)
+            cout << c;
+        cout << endl;
+        cout << "The length of chars is: " << ret << endl;
+    }
 }
