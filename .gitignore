@@ -23,6 +23,10 @@
 !*/*/*/*.md
 !*/*/*/*/*.md
 
+!*/makefile*
+!*/*/makefile*
+!*/*/*/makefile*
+!*/*/*/*/makefile*
 
 !.gitignore
 !*.md

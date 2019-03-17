@@ -1,0 +1,16 @@
+all:bubble_sort main.o bubble_sort.o sort.o
+
+bubble_sort:main.o bubble_sort.o sort.o
+	g++ -o bubble_sort main.o bubble_sort.o sort.o
+
+main.o:main.cpp
+	g++ -c main.cpp
+
+bubble_sort.o:bubble_sort.cpp
+	g++ -c bubble_sort.cpp
+
+sort.o:sort.cpp
+	g++ -c sort.cpp
+
+clean:all
+	rm all
