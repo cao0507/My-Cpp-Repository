@@ -11,5 +11,5 @@ quick_sort.o:quick_sort.cpp
 sort.o:sort.cpp
 	g++ -c sort.cpp
 
-clean:all
-	rm $(all)
+clean:
+	rm quick_sort

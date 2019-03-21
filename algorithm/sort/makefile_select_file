@@ -1,0 +1,15 @@
+all:select_sort
+select_sort:test_select_sort.o select_sort.o sort.o
+	g++ -o select_sort test_select_sort.o select_sort.o sort.o
+
+test_select_sort.o:test_select_sort.cpp
+	g++ -c test_select_sort.cpp
+
+select_sort.o:select_sort.cpp
+	g++ -c select_sort.cpp
+
+sort.o:sort.cpp
+	g++ -c sort.cpp
+
+clean:
+	rm select_sort
