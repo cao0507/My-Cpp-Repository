@@ -17,13 +17,18 @@ int prize(vector<int> &nums){
 		i = (i+1)%n;
 		j = (j+1)%n;
 	}
-	for (i = n-1, j = n-2; i >= 1; i--, j--){
-		if (nums[j] > nums[i] && gifts[j] <= gifts[i])
-			gifts[j] = gifts[i]+1;
+	//for (i = n-1, j = n-2; i >= 1; i--, j--){
+		//if (nums[j] > nums[i] && gifts[j] <= gifts[i])
+			//gifts[j] = gifts[i]+1;
+	//}
+	for (i = n-1; i >= 1; i--){
+		if (nums[i-1] > nums[i] && gifts[i-1] <= gifts[i])
+			gifts[i-1] = gifts[i]+1;
 	}
 	i = 0, j = n-1;
 	while (nums[j] > nums[i]){
-		if (nums[j] > nums[i] && gifts[j] <= gifts[i])
+		//if (nums[j] > nums[i] && gifts[j] <= gifts[i])
+		if (gifts[j] <= gifts[i])
 			gifts[j] = gifts[i]+1;
 		if (i == 0)
 			i = n-1;
