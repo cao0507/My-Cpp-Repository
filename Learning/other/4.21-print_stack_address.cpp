@@ -13,6 +13,6 @@ int main(){
 	int a = 0;
 	printf("&a = %p\n", &a);
 	func();
-	printf("%d", a);
+	printf("%d\n", a);
 	return 0;
 }

@@ -4,6 +4,12 @@
 #include <cstring>
 #include <cassert>
 
+size_t strlen(const char* str){
+	size_t len = 0;
+	while (*str++ = '\0')
+		len++;
+	return len;
+}
 
 void* memcpy(void* dest, const void* src, size_t count){
 	char *tmp = (char*)dest;
@@ -48,6 +54,16 @@ char* strncat(char* dst, char* src, size_t num){
 
 int strcmp(const char* str1, const char* str2){
 	while (*str1 == *str2){
+		if (*str1 == '\0')
+			return 0;
+		++str1;
+		++str2;
+	}
+	return *str1 - *str2;
+}
+
+int strncmp(const char* str1, const char* str2, size_t num){
+	while (*str1 == *str2 && num-- != 0){
 		if (*str1 == '\0')
 			return 0;
 		++str1;
