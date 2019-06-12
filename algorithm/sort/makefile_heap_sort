@@ -1,0 +1,15 @@
+heap_sort:test_heap_sort.o heap_sort.o sort.o
+	g++ -o heap_sort test_heap_sort.o heap_sort.o sort.o
+
+test_heap_sort.o:test_heap_sort.cpp
+	g++ -c test_heap_sort.cpp
+
+heap_sort.o:heap_sort.cpp
+	g++ -c heap_sort.cpp
+
+sort.o:sort.cpp
+	g++ -c sort.cpp
+
+clean:
+	rm heap_sort
+	rm *.o

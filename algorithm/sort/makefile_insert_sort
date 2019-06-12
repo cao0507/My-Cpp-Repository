@@ -1,0 +1,15 @@
+all:insert_sort
+insert_sort:test_insert_sort.o insert_sort.o sort.o
+	g++ -o insert_sort test_insert_sort.o insert_sort.o sort.o
+
+test_insert_sort.o:test_insert_sort.cpp
+	g++ -c test_insert_sort.cpp
+
+insert_sort.o:insert_sort.cpp
+	g++ -c insert_sort.cpp
+
+sort.o:sort.cpp
+	g++ -c sort.cpp
+
+clean:
+	rm insert_sort
