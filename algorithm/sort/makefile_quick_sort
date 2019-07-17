@@ -1,0 +1,15 @@
+all:quick_sort
+quick_sort:main.o quick_sort.o sort.o
+	g++ -o quick_sort main.o quick_sort.o sort.o
+
+main.o:main.cpp
+	g++ -c main.cpp
+
+quick_sort.o:quick_sort.cpp
+	g++ -c quick_sort.cpp
+
+sort.o:sort.cpp
+	g++ -c sort.cpp
+
+clean:
+	rm quick_sort

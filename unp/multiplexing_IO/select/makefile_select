@@ -1,0 +1,18 @@
+all:server client
+
+server:server.o
+	g++ -g -o server server.o
+
+client:client.o
+	g++ -g -o client client.o
+
+server.o:./7.3-connect_server_with_select.cpp
+	g++ -g -c ./7.3-connect_server_with_select.cpp -o server.o
+
+client.o:./7.3-connect_client_with_select.cpp
+	g++ -g -c ./7.3-connect_client_with_select.cpp -o client.o
+
+clean:
+	rm server
+	rm client
+	rm *.o

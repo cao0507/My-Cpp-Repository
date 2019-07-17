@@ -1,0 +1,15 @@
+all:merge_sort
+merge_sort:test_merge_sort.o merge_sort.o sort.o
+	g++ -o merge_sort test_merge_sort.o merge_sort.o sort.o
+
+test_merge_sort.o:test_merge_sort.cpp
+	g++ -c test_merge_sort.cpp
+
+merge_sort.o:merge_sort.cpp
+	g++ -c merge_sort.cpp
+
+sort.o:sort.cpp
+	g++ -c sort.cpp
+
+clean:
+	rm merge_sort
